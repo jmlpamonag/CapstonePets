@@ -12,7 +12,7 @@ namespace CapstonePets.Controllers
         [HttpGet]
         public ActionResult Create()
         {
-            //TO DO: These are just hard coded data
+            //TO DO: These are just hard coded data. We need to get these data from the database
             OwnerModel ownerModel = new OwnerModel();
 
             ownerModel.StateList = new List<StateModel>()
