@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
@@ -46,5 +47,12 @@ namespace CapstonePets.Models
 
         [Display(Name = "Notes")]
         public string strNotes { get; set; }
+
+        [NotMapped]
+        public List<StateModel> StateList { get; set; }
+
+        [NotMapped]
+        public List<GenderModel> GenderList { get; set; }
+
     }
 }

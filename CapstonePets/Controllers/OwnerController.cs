@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CapstonePets.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,7 +12,22 @@ namespace CapstonePets.Controllers
         [HttpGet]
         public ActionResult Create()
         {
-            return View();
+            //TO DO: These are just hard coded data
+            OwnerModel ownerModel = new OwnerModel();
+
+            ownerModel.StateList = new List<StateModel>()
+            {
+                new StateModel(){intStateID=1,strState="OH"},
+                new StateModel(){intStateID=2,strState="KY"}
+            };
+
+            ownerModel.GenderList = new List<GenderModel>()
+            {
+                new GenderModel(){intGenderID=1,strGender="Female"},
+                new GenderModel(){intGenderID=2,strGender="Male"}
+            };
+
+            return View(ownerModel);
         }
 
         [HttpPost]
